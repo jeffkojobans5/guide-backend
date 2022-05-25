@@ -1,16 +1,22 @@
-// import express from "express"
-// import Room from "../models/Room.js"
+import express from "express"
+import { createRoom , findRoom , getRooms , updateRoom ,  deleteRoom} from '../controllers/room.js'
+import { verifyAdmin  } from '../utils/verfiyToken.js'
 
-// const router = express.Router()
+const router = express.Router()
 
-// // CREATE
-// router.post("/" , async (req , res)=>{
+// CREATE
+router.post("/:hotelid" , verifyAdmin , createRoom)
 
-// })
-// // DELETE
-// // UPDATE
-// // GET
-// // GET ALL
+// UPDATE
+router.put("/:id" , verifyAdmin , updateRoom)
 
+// DELETE
+router.delete("/:id" , verifyAdmin , deleteRoom)
 
-// export default router
+// GET
+router.get("/:id" , findRoom)
+
+// GET ALL
+router.get("/" , getRooms)
+
+export default router
