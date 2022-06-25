@@ -28,7 +28,7 @@ mongoose.connection.on("disconnected", () => {
 
 // middlewares
 const corsOptions = {
-    origin: 'https://guide-two.vercel.app', 
+    origin: 'https://shiny-gumdrop-e14236.netlify.app', 
     credentials:true,            //access-control-allow-credentials:true
     optionSuccessStatus:200    
 }
@@ -45,7 +45,6 @@ app.use("/api/rooms", roomsRoute);
 
 
 app.use((err, req, res, next) => {
-
 
   const errorStatus = err.status || 500;
   const errorMessage = err.message || "Something went wrong!";
