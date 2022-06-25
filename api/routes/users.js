@@ -1,6 +1,5 @@
 import express from "express"
-// const {verifyAdmin} = require('../utils/verifyToken.js')
-import { createUser , findUser , getUsers , updateUser ,  deleteUser} from '../controllers/User.js'
+import { createUser , findUser , getUsers , updateUser ,  deleteUser , nonAdmin} from '../controllers/User.js'
 import { verifyToken, verifyUser , verifyAdmin  } from '../utils/verfiyToken.js'
 
 const router = express.Router()
@@ -28,6 +27,10 @@ router.delete("/:id" , verifyUser , deleteUser)
 
 // GET
 router.get("/:id" , verifyUser , findUser)
+
+
+// GET
+router.get("/find/nonadmin" , verifyAdmin , nonAdmin)
 
 // GET ALL
 router.get("/" , verifyAdmin , getUsers)

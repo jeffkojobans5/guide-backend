@@ -28,6 +28,15 @@ export const getUsers = async ( req , res , next) => {
     }
 }
 
+export const nonAdmin = async ( req , res , next) => {
+    try{
+        const users = await User.find({ isAdmin : false })
+        res.status(200).json(users)
+    } catch (err) {
+        next(err)
+    }
+}
+
 export const deleteUser = async ( req , res , next) => {
     try{
         await User.findByIdAndDelete(req.params.id )

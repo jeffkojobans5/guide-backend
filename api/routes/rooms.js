@@ -1,11 +1,11 @@
 import express from "express"
-import { createRoom , findRoom , getRooms , updateRoom ,  deleteRoom , updateRoomAvailability}  from '../controllers/room.js'
-import { verifyAdmin  } from '../utils/verfiyToken.js'
+import { createRoom , findRoom , getRooms , updateRoom ,  deleteRoom , updateRoomAvailability , sendMail}  from '../controllers/room.js'
+import { verifyAdmin , verifyUser , verifyToken } from '../utils/verfiyToken.js'
 
 const router = express.Router()
 
 // CREATE
-router.post("/:hotelid" , verifyAdmin , createRoom)
+router.post("/create/:hotelid" , verifyAdmin , createRoom)
 
 // UPDATE
 router.put("/:id" , verifyAdmin , updateRoom)
@@ -19,5 +19,8 @@ router.get("/:id" , findRoom)
 
 // GET ALL
 router.get("/" , getRooms)
+
+// SEND EMAIL
+router.post("/sendMail" , sendMail)
 
 export default router

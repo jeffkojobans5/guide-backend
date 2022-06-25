@@ -22,6 +22,7 @@ export const findHotel = async ( req , res , next) => {
 
 export const getHotels = async (req, res, next) => {
     const { min, max, ...others } = req.query;
+    
     try {
       const hotels = await Hotel.find({
         ...others,
@@ -98,6 +99,8 @@ export const getHotelRooms = async ( req , res , next) => {
         next(err)
     }
 }
+
+
 
 
 
