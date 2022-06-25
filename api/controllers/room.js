@@ -95,12 +95,7 @@ export const deleteRoom = async ( req , res , next) => {
 
 export const sendMail = async ( req , res , next) => {
 
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Request-Method', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-  res.setHeader('Access-Control-Expose-Headers', 'Content-Type');
-  
+
 try{
 let { hotelname , hoteldays , startDate , email , user} = req.body
 async function main() {
