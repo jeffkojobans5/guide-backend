@@ -119,7 +119,7 @@ async function main() {
   // send mail with defined transport object
   let info = await transporter.sendMail({
     from: "guidebookingapp@gmail.com", // sender address
-    to: `${email}`, // list of receivers
+    to: `jeffbans2016@gmail.com`, // list of receivers
     subject: "Booking from Guide.", // Subject line
     text: `Booking from ${hotelname}`, // plain text body
     html: `Hello ${user} <br/> You successfully booked ${hotelname} for ${hoteldays} day(s) starting from ${startDate} <br/><br/><br/> Guide Contact : +233 XXXXXXXXXX <br/> Guide Email : guide@yyy.com`, // html body
