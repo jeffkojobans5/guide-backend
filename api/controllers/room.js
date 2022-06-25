@@ -122,7 +122,7 @@ async function main() {
     to: `${email}`, // list of receivers
     subject: "Booking from Guide.", // Subject line
     text: `Booking from ${hotelname}`, // plain text body
-    html: `Hello ${user} <br/> You successfully booked ${hotelname} for ${hoteldays} day(s) starting from ${startDate} <br/><br/><br/> Guide Contact : +233 XXXXXXXXXX <br/> Guide Email : guide@yyy.com`, // html body
+    html: `Hello ${user} <br/> You successfully booked ${hotelname} for ${hoteldays} day(s) starting from ${startDate} <br/><br/><br/> Guide Contact : +233 XXXXXXXXXX <br/> Guide Email : guidebookingapp@gmail.com`, // html body
   });
 
   console.log("Message sent: %s", info.messageId);
