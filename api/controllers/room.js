@@ -98,6 +98,7 @@ export const sendMail = async ( req , res , next) => {
 
 try{
 let { hotelname , hoteldays , startDate , email , user} = req.body
+console.log(req.body)
 if(hoteldays == 0) {
   hoteldays = 1
 }
