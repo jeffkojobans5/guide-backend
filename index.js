@@ -53,11 +53,7 @@ app.use((err, req, res, next) => {
 
 // 
 
-app.use(express.static(path.join(__dirname, "/<front end app folder name>/build")));
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '/<front end app folder name>/build', 'index.html'));
-});
 
 
 app.listen(process.env.PORT || 8800, () => {
