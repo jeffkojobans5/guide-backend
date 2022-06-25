@@ -28,7 +28,8 @@ mongoose.connection.on("disconnected", () => {
 
 // middlewares
 const corsOptions = {
-    origin: 'https://shiny-gumdrop-e14236.netlify.app', 
+    // origin: 'https://shiny-gumdrop-e14236.netlify.app', 
+    origin: true, 
     credentials:true,            //access-control-allow-credentials:true
     optionSuccessStatus:200    
 }
