@@ -5,7 +5,7 @@ import { verifyAdmin  } from '../utils/verfiyToken.js'
 const router = express.Router()
 
 // CREATE
-router.post("/" , verifyAdmin , createHotel)
+router.post("/createHotel" , verifyAdmin , createHotel)
 
 // UPDATE
 router.put("/:id" , verifyAdmin , updateHotel)
@@ -17,7 +17,7 @@ router.delete("/:id" , verifyAdmin , deleteHotel)
 router.get("/find/:id" , findHotel)
 
 // GET ALL
-router.get("/" , getHotels)
+router.get("/allHotels" , getHotels)
 
 router.get("/countByCity" , countByCity)
 router.get("/countByType" , countByType)

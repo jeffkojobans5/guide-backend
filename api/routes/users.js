@@ -17,7 +17,7 @@ const router = express.Router()
 // });
 
 // CREATE
-router.post("/" , verifyUser , createUser)
+router.post("/createUser" , verifyUser , createUser)
 
 // UPDATE
 router.put("/:id" , verifyUser , updateUser)
@@ -33,6 +33,6 @@ router.get("/:id" , verifyUser , findUser)
 router.get("/find/nonadmin" , verifyAdmin , nonAdmin)
 
 // GET ALL
-router.get("/" , verifyAdmin , getUsers)
+router.get("/getUsers" , verifyAdmin , getUsers)
 
 export default router
