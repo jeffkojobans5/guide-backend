@@ -4,9 +4,9 @@ import { verifyToken, verifyUser , verifyAdmin  } from '../utils/verfiyToken.js'
 
 const router = express.Router()
 
-// router.get("/checkauthentication" , verifyToken , (req , res) => {
-//     res.send("hello user you are login ")
-// });
+router.get("/checkauthentication" , verifyToken , (req , res) => {
+    res.send("hello user you are login ")
+});
 
 // router.get("/checkuser/:id" , verifyUser , (req , res) => {
 //     res.send("hello user you are login and you can delete your account ")
@@ -33,6 +33,6 @@ router.get("/:id" , verifyUser , findUser)
 router.get("/find/nonadmin" , verifyAdmin , nonAdmin)
 
 // GET ALL
-router.get("/getUsers" , verifyAdmin , getUsers)
+router.get("/" , verifyAdmin , getUsers)
 
 export default router

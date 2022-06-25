@@ -10,7 +10,7 @@ import cors from "cors";
 
 const app = express();
 dotenv.config();
-
+  
 const connect = async () => {
   try {
     await mongoose.connect("mongodb+srv://jeff:jeff@cluster0.yqpwu.mongodb.net/?retryWrites=true&w=majority");
@@ -46,7 +46,6 @@ app.use("/api/rooms", roomsRoute);
 
 
 app.use((err, req, res, next) => {
-
   const errorStatus = err.status || 500;
   const errorMessage = err.message || "Something went wrong!";
   return res.status(errorStatus).json({
