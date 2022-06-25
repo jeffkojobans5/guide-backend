@@ -18,7 +18,7 @@ router.delete("/:id/:hotelid" , verifyAdmin , deleteRoom)
 router.get("/:id" , findRoom)
 
 // GET ALL
-router.get("/" , getRooms)
+router.get("/getRooms" , getRooms)
 
 // SEND EMAIL
 router.post("/sendMail" , sendMail)

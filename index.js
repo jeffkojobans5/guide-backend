@@ -13,7 +13,7 @@ dotenv.config();
 
 const connect = async () => {
   try {
-    await mongoose.connect("mongodb+srv://jeff:jeff@cluster0.yqpwu.mongodb.net/?retryWrites=true&w=majority");
+    await mongoose.connect(process.env.MONGO);
     console.log("Connected to mongoDB.");
   } catch (error) {
     throw error;
@@ -30,6 +30,9 @@ mongoose.connection.on("disconnected", () => {
 const corsOptions = {
     origin: true, 
     credentials:true,            //access-control-allow-credentials:true
+    origin:'http://localhost:3000', 
+    credentials:true,            //access-control-allow-credentials:true
+    optionSuccessStatus:200    
 }
 
 app.use(cors(corsOptions));
@@ -41,6 +44,7 @@ app.use("/api/auth", authRoute);
 app.use("/api/users", usersRoute);
 app.use("/api/hotels", hotelsRoute);
 app.use("/api/rooms", roomsRoute);
+
 
 app.use((err, req, res, next) => {
   const errorStatus = err.status || 500;
