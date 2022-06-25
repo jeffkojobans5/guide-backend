@@ -28,7 +28,7 @@ mongoose.connection.on("disconnected", () => {
 
 // middlewares
 const corsOptions = {
-    origin: true, 
+    origin: 'https://guide-two.vercel.app', 
     credentials:true,            //access-control-allow-credentials:true
     optionSuccessStatus:200    
 }
